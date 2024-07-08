@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Excuse.App/static/css/main.1f276999.css",
+    "main.js": "/Excuse.App/static/js/main.ebc4ef86.js",
+    "index.html": "/Excuse.App/index.html",
+    "main.1f276999.css.map": "/Excuse.App/static/css/main.1f276999.css.map",
+    "main.ebc4ef86.js.map": "/Excuse.App/static/js/main.ebc4ef86.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1f276999.css",
+    "static/js/main.ebc4ef86.js"
+  ]
+}
