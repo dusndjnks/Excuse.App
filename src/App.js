@@ -21,7 +21,7 @@ function App() {
       <button className="bg-pink-600 rounded-lg  py-1  font-semibold w-[130px]" onClick={()=>{fetchData("office")}}>Office</button>
       <button className="bg-red-600 rounded-lg px-5 py-1 font-semibold w-[150px]" onClick={()=>{fetchData("developers")}}>Developers</button>
      </div>
-     <h1 className="text-blue-400 text-2xl font-semibold w-[250px] text-center">{excuse}</h1>
+     <h1 className="text-blue-400 text-2xl font-semibold text-center">{excuse}</h1>
     </div>
   );
 }
