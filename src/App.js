@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useState } from "react";
+import axios from "axios";
 function App() {
+
+  const [excuse,setExcuse]=useState("The alarm betrayed me today.")
+  
+  const fetchData=async (reoson)=>{
+    const {data}=await axios.get(`https://excuser-three.vercel.app/v1/excuse/${reoson}/`)
+    setExcuse(data[0].excuse)
+  console.log(excuse);
+
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App h-screen  flex flex-col justify-center items-center bg-black text-white gap-6">
+     <div>
+     <h1 className='text-4xl  text-blue-400 font-thin flex justify-center items-center'>Generate an excuse</h1>
+     </div>
+     <div className="flex flex-col  items-center gap-2 ">
+      <button className="bg-blue-600 rounded-lg  py-1 font-semibold w-[100px]" onClick={()=>{fetchData("funny")}} >Funny</button>
+      <button className="bg-pink-600 rounded-lg  py-1  font-semibold w-[130px]" onClick={()=>{fetchData("office")}}>Office</button>
+      <button className="bg-red-600 rounded-lg px-5 py-1 font-semibold w-[150px]" onClick={()=>{fetchData("developers")}}>Developers</button>
+     </div>
+     <h1 className="text-blue-400 text-2xl font-semibold ">{excuse}</h1>
     </div>
   );
 }
